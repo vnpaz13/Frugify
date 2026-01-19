@@ -66,22 +66,22 @@ viewModel.onSummary = { output in
 
 **Main**
 
-* MainHeader
-* MainVC
-* MainTodaySave
-* TodayEntireVC
+* `MainHeader`
+* `MainVC`
+* `MainTodaySave`
+* `TodayEntireVC`
 
 **Statistics**
 
-* StaticVC
-* CategoryDetailVC
-* EmotionAllStatsSheetVC
+* `StaticVC`
+* `CategoryDetailVC`
+* `EmotionAllStatsSheetVC`
 
 **Setting**
 
-* SettingVC
-* SettingRowView
-* NickNameEditPopUpVC
+* `SettingVC`
+* `SettingRowView`
+* `NickNameEditPopUpVC`
 
 ---
 
