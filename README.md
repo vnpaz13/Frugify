@@ -202,12 +202,12 @@ let (start, end) = ym.monthRange(in: TimeZone(identifier: "Asia/Seoul")!)
 
 * `SupabaseManager`를 도메인별 서비스로 분리
 * 기록 수정(Edit) 기능 추가
-* Combine 기반 ViewModel 확장
+* Rx/Combine 기반 ViewModel 확장
 * 차트 애니메이션 고도화
 
 ---
 
-## 🧾 한 줄 요약 (Resume용)
+## 🧾 한 줄 요약
 
 > **UIKit 기반 MVVM 구조로 절약 기록 앱을 설계하고, Supabase Auth/DB 및 CoreAnimation 차트를 직접 구현한 iOS 프로젝트**
 
