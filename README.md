@@ -184,7 +184,7 @@ let (start, end) = ym.monthRange(in: TimeZone(identifier: "Asia/Seoul")!)
 ## 🧠 기술 스택
 
 * **Language**: Swift
-* **UI**: UIKit, AutoLayout
+* **UI**: UIKit (CodeLayout)
 * **Architecture**: MVVM
 * **Concurrency**: async / await
 * **Backend**: Supabase
