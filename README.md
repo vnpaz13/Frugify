@@ -42,7 +42,7 @@ ViewModel
 
 ### Output Callback 방식
 
-* Combine/Rx 없이도 반응형 업데이트 구현
+* Rx/Combine 없이도 반응형 업데이트 구현
 * 의존성 최소화 + 구조 명확성 확보
 
 예시:
