@@ -64,28 +64,24 @@ viewModel.onSummary = { output in
 
 화면을 “작은 UI 컴포넌트”로 분리하여 유지보수성과 재사용성을 높였습니다.
 
-**Home**
+**Main**
 
-* `MainHeader`
-* `MainNewRecord`
-* `MainTodaySave`
-* `MainTodayRecordList`
+* MainHeader
+* MainVC
+* MainTodaySave
+* TodayEntireVC
 
 **Statistics**
 
-* `SummaryCardView`
-* `MonthlySummaryCardView`
-* `EmotionTopView`
-* `EmotionAmountCardView`
+* StaticVC
+* CategoryDetailVC
+* EmotionAllStatsSheetVC
 
-**Cells / Rows**
+**Setting**
 
-* `TodayRecordCell`
-* `CategoryBarView`
-* `EmotionTopCardView`
-* `EmotionAmountRowView`
-
-> ViewController는 컴포넌트를 **조립하는 역할**만 수행합니다.
+* SettingVC
+* SettingRowView
+* NickNameEditPopUpVC
 
 ---
 
