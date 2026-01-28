@@ -319,7 +319,7 @@ viewModel.onSummary = { output in
 
 ### **ver 1.0.2 (2026.01.28)**
 
-- Apple 계정 연동 가입 버튼 한글화
+- Apple 계정 연동 가입 버튼 한글화 및 세부 UI 조정
 
 ---
 ## 📌 향후 개선 방향
