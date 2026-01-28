@@ -10,6 +10,7 @@ https://apps.apple.com/kr/app/frugify-%EC%A0%88%EC%95%BD%EA%B8%B0%EB%A1%9D-%EA%B
 <img width= "200" src = "https://github.com/user-attachments/assets/84a5c652-2408-4373-b682-f643715ad58d">
 <img width= "200" src = "https://github.com/user-attachments/assets/fb418cf9-32f9-41d3-a219-44d5d6aab1a8">
 <img width= "200" src = "https://github.com/user-attachments/assets/de69b2b4-5d96-4ea0-85c1-6adc958e74a7">
+<img width= "200" src = "https://github.com/user-attachments/assets/19fa93d9-40e8-40b8-af51-8c61f60a4ce7">
 </div>
 
 ## 📱 앱 개요
