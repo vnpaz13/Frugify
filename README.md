@@ -323,10 +323,11 @@ viewModel.onSummary = { output in
 - `SupabaseManager`를 도메인별 서비스로 분리
 - Rx/Combine 기반 ViewModel 확장
 - 차트 애니메이션 고도화
+- 감정, 카테고리 가로 스크롤뷰 UI 개선
 - 커뮤니티 섹션 추가
 
 ## 🛠️ 추후 업데이트 예정
 
-- 기록 수정(Edit) 기능 추가
 - 전체 기록 조회 기능 추가
+- 기록 수정(Edit) 기능 추가
 - 감정, 카테고리 커스터마이즈 기능 추가
