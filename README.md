@@ -191,7 +191,7 @@ viewModel.onSummary = { output in
 
 ---
 
-## 🔹 Settings
+## 🔹 Features / Settings
 
 | 파일명 | 역할 |
 | --- | --- |
