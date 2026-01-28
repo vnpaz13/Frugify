@@ -3,7 +3,8 @@
 **절약 기록을 통해 소비 습관을 개선하는 iOS 통계 앱**
 
 > Track Your Savings, Grow Your Future
-> https://apps.apple.com/kr/app/frugify-%EC%A0%88%EC%95%BD%EA%B8%B0%EB%A1%9D-%EA%B0%80%EA%B3%84%EB%B6%80/id6757951737
+>
+https://apps.apple.com/kr/app/frugify-%EC%A0%88%EC%95%BD%EA%B8%B0%EB%A1%9D-%EA%B0%80%EA%B3%84%EB%B6%80/id6757951737
 
 ---
 
