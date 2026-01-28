@@ -3,6 +3,7 @@
 **절약 기록을 통해 소비 습관을 개선하는 iOS 통계 앱**
 
 > Track Your Savings, Grow Your Future
+>
 
 <a href="https://apps.apple.com/kr/app/frugify-%EC%A0%88%EC%95%BD%EA%B8%B0%EB%A1%9D-%EA%B0%80%EA%B3%84%EB%B6%80/id6757951737">
   <img src="https://github.com/user-attachments/assets/28f482aa-7690-499d-a098-1c45ec0c08db"
@@ -10,9 +11,9 @@
        style="vertical-align: middle;" />
 </a>
 <a href="https://apps.apple.com/kr/app/frugify-%EC%A0%88%EC%95%BD%EA%B8%B0%EB%A1%9D-%EA%B0%80%EA%B3%84%EB%B6%80/id6757951737">
-   👈 앱 스토어
+   👈 앱 스토어로 이동하기
 </a>
->
+
 
 
 
