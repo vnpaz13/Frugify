@@ -4,7 +4,7 @@
 
 > Track Your Savings, Grow Your Future
 >
-![앱 스토어 🍎](https://apps.apple.com/kr/app/frugify-%EC%A0%88%EC%95%BD%EA%B8%B0%EB%A1%9D-%EA%B0%80%EA%B3%84%EB%B6%80/id6757951737)
+[앱 스토어 👉](https://apps.apple.com/kr/app/frugify-%EC%A0%88%EC%95%BD%EA%B8%B0%EB%A1%9D-%EA%B0%80%EA%B3%84%EB%B6%80/id6757951737)
 
 
 <div>
