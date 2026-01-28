@@ -52,6 +52,7 @@ https://apps.apple.com/kr/app/frugify-%EC%A0%88%EC%95%BD%EA%B8%B0%EB%A1%9D-%EA%B
 - 설정 화면
     - 닉네임 변경
     - 화면 모드
+![Image](https://github.com/user-attachments/assets/a3bd4b17-0752-4b82-aec1-f68d721a9757)
 
 ---
 
