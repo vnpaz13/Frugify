@@ -309,3 +309,10 @@ viewModel.onSummary = { output in
 ### **ver 1.0.2 (2026.01.28)**
 
 - Apple 계정 연동 가입 버튼 한글화
+
+## 📌 향후 개선 방향
+
+- `SupabaseManager`를 도메인별 서비스로 분리
+- 기록 수정(Edit) 기능 추가
+- Rx/Combine 기반 ViewModel 확장
+- 차트 애니메이션 고도화
