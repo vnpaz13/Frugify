@@ -1,0 +1,41 @@
+# =========================
+# 🔐 Secrets / Config
+# =========================
+Secrets.plist
+Secrets.xcconfig
+Config/Secrets.xcconfig
+Config.xcconfig
+Info.plist
+
+# =========================
+# 🌱 Environment
+# =========================
+.env
+.env.*
+
+# =========================
+# 🛠 Xcode
+# =========================
+DerivedData/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+xcuserdata/
+
+# =========================
+# 🏗 Build artifacts
+# =========================
+build/
+*.ipa
+*.dSYM
+
+# =========================
+# 🍎 macOS
+# =========================
+.DS_Store
+
+# =========================
+# 📜 Logs
+# =========================
+*.log
+
