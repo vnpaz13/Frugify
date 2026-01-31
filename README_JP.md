@@ -101,7 +101,7 @@ ViewModel
 例：
 
 ```jsx
-viewModel.onSummary = { outputin
+viewModel.onSummary = { output in
     self.summaryCard.configure(
 totalAmount: output.totalAmount,
 count: output.count
