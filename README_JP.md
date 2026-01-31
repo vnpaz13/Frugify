@@ -103,8 +103,8 @@ ViewModel
 ```jsx
 viewModel.onSummary = { output in
     self.summaryCard.configure(
-totalAmount: output.totalAmount,
-count: output.count
+        totalAmount: output.totalAmount,
+        count: output.count
     )
 }
 
