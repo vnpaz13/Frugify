@@ -1,9 +1,9 @@
 # Frugify
 
-**절약 기록을 통해 소비 습관을 개선하는 iOS 통계 앱**
+**節約記録を通じて消費習慣を改善する iOS 統計アプリ**
 
 > Track Your Savings, Grow Your Future
->
+> 
 
 <a href="https://apps.apple.com/kr/app/frugify-%EC%A0%88%EC%95%BD%EA%B8%B0%EB%A1%9D-%EA%B0%80%EA%B3%84%EB%B6%80/id6757951737">
   <img src="https://github.com/user-attachments/assets/28f482aa-7690-499d-a098-1c45ec0c08db"
@@ -21,311 +21,318 @@
 <img width= "200" src = "https://github.com/user-attachments/assets/19fa93d9-40e8-40b8-af51-8c61f60a4ce7">
 </div>
 
-## 📱 앱 개요
+## 📱 アプリ概要
 
-### ⏱ 작업 기간
+### ⏱ 開発期間
 
 - 2025.12.11 ~ 2026.01.16
 
-### 👤 인원
+### 👤 開発人数
 
-- iOS 1인 개발
+- iOS 1人開発
 
-### 🧭 앱 성격 / 카테고리
+### 🧭 アプリの性格 / カテゴリ
 
-- iOS 개인 금융 / 절약 습관 개선 앱
-- 통계 기반 소비 인식 개선 서비스
+- iOS 個人金融 / 節約習慣改善アプリ
+- 統計に基づく消費認識改善サービス
 
-### 📝 앱 소개
+### 📝 アプリ紹介
 
-**Frugify**는 사용자가 **‘아낀 소비’만을 기록**하도록 설계된 iOS 앱입니다.
+**Frugify** は、ユーザーが **「節約できた消費」だけを記録**するよう設計された iOS アプリです。
 
-절약한 금액을 **감정과 카테고리로 기록**하고,
+節約した金額を **感情** と **カテゴリ** で記録し、
 
-**오늘 / 월별 / 전체 통계**를 시각화하여
+**今日 / 月別 / 全期間の統計** を可視化することで、
 
-절약 행동이 **성취감 → 습관**으로 이어지도록 돕습니다.
+節約行動が **達成感 → 習慣** へつながるようサポートします。
 
-> 단순 지출 관리가 아닌
+> 単なる支出管理ではなく
 > 
 > 
-> “아낀 경험을 기록하고 강화하는 것”을 핵심 가치로 합니다.
+> 「節約できた体験を記録し、強化していくこと」を中核価値としています。
 > 
 
-### ✨ 주요 기능
+### ✨ 主な機能
 
-- 홈 화면
-    - 절약 기록 추가 (감정 / 카테고리 / 금액)
-    - 오늘의 절약 기록
-    - 연속 기록 일수(Streak) 뱃지
-- 통계 화면
-    - 총 절약 금액 (카테고리 별 내역 확인 가능)
-    - 월별 통계 (절약 횟수, 금액, 카테고리 별)
-    - 감정 통계 (선택 횟수, 금액)
-- 설정 화면
-    - 닉네임 변경
-    - 화면 모드
+- ホーム画面
+    - 節約記録の追加（感情 / カテゴリ / 金額）
+    - 今日の節約記録
+    - 連続記録日数（Streak）バッジ
+- 統計画面
+    - 総節約金額（カテゴリ別の内訳確認が可能）
+    - 月別統計（節約回数、金額、カテゴリ別）
+    - 感情統計（選択回数、金額）
+- 設定画面
+    - ニックネーム変更
+    - 画面モード
+
 ---
 
-## 🛠 기술
+## 🛠 技術
 
-### 🧱 아키텍처 소개
+### 🧱 アーキテクチャ紹介
 
-**UIKit + MVVM (CallBack Binding)**
+**UIKit + MVVM（CallBack Binding）**
 
-- UIKit 기반 코드 레이아웃
-- 화면 단위로 `ViewController / ViewModel` 분리
-- ViewModel은 **데이터 처리 & 상태 관리**
-- ViewController는 **UI 구성 & 바인딩**에 집중
+- UIKit ベースのコードレイアウト
+- 画面単位で `ViewController / ViewModel` を分離
+- ViewModel は **データ処理 & 状態管理** を担当
+- ViewController は **UI 構成 & バインディング** に集中
 
 ```
 ViewController
- ├─ UI 구성
- ├─ 사용자 이벤트 처리
- └─ ViewModel Output 바인딩
+ ├─ UI 構成
+ ├─ ユーザーイベント処理
+ └─ ViewModel Output のバインディング
 
 ViewModel
- ├─ 비즈니스 로직
- ├─ 네트워크 요청
- ├─ 데이터 가공
- └─ Output(Closure) 전달
+ ├─ ビジネスロジック
+ ├─ ネットワークリクエスト
+ ├─ データ加工
+ └─ Output（Closure）で通知
+
 ```
 
-**Output Callback 방식**
+**Output Callback 方式**
 
-- Rx/Combine 없이도 반응형 업데이트 구현
-- 의존성 최소화 + 구조 명확성 확보
+- Rx/Combine なしでもリアクティブな更新を実現
+- 依存を最小化しつつ、構造の明確さを確保
 
-예시 : 
+例：
 
 ```jsx
-viewModel.onSummary = { output in
+viewModel.onSummary = { outputin
     self.summaryCard.configure(
-        totalAmount: output.totalAmount,
-        count: output.count
+totalAmount: output.totalAmount,
+count: output.count
     )
 }
+
 ```
 
-### 📂 파일 설명 (구조 요약)
+### 📂 ファイル説明（構造サマリ）
 
 ### 🔹 App
 
-| 파일명 | 역할 |
+| ファイル名 | 役割 |
 | --- | --- |
-| `AppDelegate.swift` | 앱 진입점, 기본 라이프사이클 관리 (CoreData 템플릿 포함) |
-| `SceneDelegate.swift` | 전역 UI 설정(다크모드) 적용, 초기 Root를 `SplashVC`로 설정 |
-| `AppRouter.swift` | 로그인/메인 루트 전환 담당 (Root 교체 + 애니메이션) |
-| `TabBarController.swift` | 홈/통계/설정 탭 구성, 재탭 시 스크롤 상단 이동 처리 |
+| `AppDelegate.swift` | アプリのエントリーポイント、基本ライフサイクル管理（CoreData テンプレート含む） |
+| `SceneDelegate.swift` | グローバル UI 設定（ダークモード）適用、初期 Root を `SplashVC` に設定 |
+| `AppRouter.swift` | ログイン/メインのルート切り替え担当（Root 差し替え + アニメーション） |
+| `TabBarController.swift` | ホーム/統計/設定タブ構成、再タップ時にスクロールを先頭へ戻す処理 |
 
 ---
 
-### 🔹 Core
+### 🔹 Core
 
-| 파일명 | 역할 |
+| ファイル名 | 役割 |
 | --- | --- |
-| `SupabaseManager.swift` | Supabase 단일 진입점(Auth, DB CRUD, OAuth, Edge Function 호출) |
+| `SupabaseManager.swift` | Supabase の単一エントリーポイント（Auth, DB CRUD, OAuth, Edge Function 呼び出し） |
 
 ---
 
-### 🔹 Domian / Entities & DTO
+### 🔹 Domain / Entities & DTO
 
-| 파일명 | 역할 |
+| ファイル名 | 役割 |
 | --- | --- |
-| `NewSavingRecord.swift` | 새 절약 기록 입력용 모델 |
-| `SaveEmotion.swift` | 감정 고정 데이터(id, title, symbol) |
-| `SaveCategory.swift` | 카테고리 고정 데이터(id, title, color) |
-| `YearMonth.swift` | 월 단위 모델(KST 기준 월 범위 계산, 월 리스트 생성) |
+| `NewSavingRecord.swift` | 新しい節約記録入力用モデル |
+| `SaveEmotion.swift` | 感情の固定データ（id, title, symbol） |
+| `SaveCategory.swift` | カテゴリの固定データ（id, title, color） |
+| `YearMonth.swift` | 月単位モデル（KST 基準の月範囲計算、月リスト生成） |
 
-| 파일명 | 역할 |
+| ファイル名 | 役割 |
 | --- | --- |
-| `UserRow.swift` | `users` 테이블 디코딩 모델(프로필) |
-| `SavingRecord.swift` | `records` 테이블 디코딩 모델 |
-| `CreateRecordRequest.swift` | records insert 요청 모델 |
-| `CreateUserRequest.swift` | users insert 요청 모델 |
+| `UserRow.swift` | `users` テーブルのデコードモデル（プロフィール） |
+| `SavingRecord.swift` | `records` テーブルのデコードモデル |
+| `CreateRecordRequest.swift` | records insert リクエストモデル |
+| `CreateUserRequest.swift` | users insert リクエストモデル |
 
 ---
 
-### 🔹 Features / Auth
+### 🔹 Features / Auth
 
-| 파일명 | 역할 |
+| ファイル名 | 役割 |
 | --- | --- |
-| `SplashVC.swift` | 스플래시 화면 + 세션 검사 후 루트 분기 |
-| `SplashViewModel.swift` | 로그인 세션 유효성 검사 |
-| `SignInVC.swift` | 로그인 UI(이메일/소셜) |
-| `SignInViewModel.swift` | 로그인 조건 검증 + 로그인 실행 |
-| `SignUpVC.swift` | 회원가입 UI(중복확인 포함) |
-| `SignUpViewModel.swift` | 회원가입 조건/중복확인/가입 로직 |
+| `SplashVC.swift` | スプラッシュ画面 + セッション確認後にルート分岐 |
+| `SplashViewModel.swift` | ログインセッションの有効性チェック |
+| `SignInVC.swift` | ログイン UI（メール / ソーシャル） |
+| `SignInViewModel.swift` | ログイン条件検証 + ログイン実行 |
+| `SignUpVC.swift` | 会員登録 UI（重複確認を含む） |
+| `SignUpViewModel.swift` | 会員登録の条件/重複確認/登録ロジック |
 
 ---
 
 ### 🔹 Features / Main
 
-| 파일명 | 역할 |
+| ファイル名 | 役割 |
 | --- | --- |
-| `MainVC.swift` | 홈 화면 컨테이너, 하위 컴포넌트 조립 |
-| `MainViewModel.swift` | 오늘 기록 조회/저장/삭제, streak 계산 |
-| `MainViewModel+TodayDonut.swift` | 오늘 기록 도넛 차트 데이터 생성 |
-| `MainHeader.swift` | 상단 날짜/닉네임/streak 표시 |
-| `MainNewRecord.swift` | 새 절약 기록 입력 UI |
-| `MainNewRecord+Actions.swift` | 기록 저장/초기화/토글 동작 |
-| `MainNewRecord+Selection.swift` | 감정/카테고리 단일 선택 로직 |
-| `MainNewRecord+ScrollHelper.swift` | 가로 스크롤 UI 헬퍼 |
-| `EmotionCard.swift` | 감정 선택 카드 UI |
-| `CategoryCard.swift` | 카테고리 선택 카드 UI |
-| `AmountMemo.swift` | 금액/메모 입력 컴포넌트 |
-| `MainTodaySave.swift` | 오늘 요약(empty ↔ donut 전환) |
-| `DonutSummaryCardView.swift` | 도넛 차트 + 범례 UI |
-| `MainTodayRecordList.swift` | 오늘 기록 리스트(최대 3개) |
-| `TodayRecordCell.swift` | 오늘 기록 셀 UI |
-| `TodayEntireVC.swift` | 오늘 기록 전체 목록 화면 |
-| `PaddingLabel.swift` | padding 지원 UILabel |
+| `MainVC.swift` | ホーム画面コンテナ、下位コンポーネントを組み立て |
+| `MainViewModel.swift` | 今日の記録取得/保存/削除、streak 計算 |
+| `MainViewModel+TodayDonut.swift` | 今日の記録ドーナツチャート用データ生成 |
+| `MainHeader.swift` | 上部の日付/ニックネーム/streak 表示 |
+| `MainNewRecord.swift` | 新しい節約記録入力 UI |
+| `MainNewRecord+Actions.swift` | 記録の保存/初期化/トグル動作 |
+| `MainNewRecord+Selection.swift` | 感情/カテゴリの単一選択ロジック |
+| `MainNewRecord+ScrollHelper.swift` | 横スクロール UI ヘルパー |
+| `EmotionCard.swift` | 感情選択カード UI |
+| `CategoryCard.swift` | カテゴリ選択カード UI |
+| `AmountMemo.swift` | 金額/メモ入力コンポーネント |
+| `MainTodaySave.swift` | 今日のサマリー（empty ↔ donut 切り替え） |
+| `DonutSummaryCardView.swift` | ドーナツチャート + 凡例 UI |
+| `MainTodayRecordList.swift` | 今日の記録リスト（最大 3 件） |
+| `TodayRecordCell.swift` | 今日の記録セル UI |
+| `TodayEntireVC.swift` | 今日の記録全件一覧画面 |
+| `PaddingLabel.swift` | padding 対応 UILabel |
 
 ---
 
 ### 🔹 Features / Static
 
-| 파일명 | 역할 |
+| ファイル名 | 役割 |
 | --- | --- |
-| `StaticVC.swift` | 통계 화면 컨테이너 |
-| `StaticViewModel.swift` | 전체/월별/감정 통계 계산 |
-| `SummaryCardView.swift` | 전체 누적 요약 카드 |
-| `MonthlySummaryCardView.swift` | 월 선택 + 카테고리별 통계 |
-| `CategoryBarView.swift` | 카테고리 바 차트 UI |
-| `CategoryDetailVC.swift` | 카테고리 상세 화면 |
-| `CategoryDetailViewModel.swift` | 카테고리별 합산 로직 |
-| `EmotionTopView.swift` | 감정 TOP 3 요약 |
-| `EmotionTopCardView.swift` | 감정 TOP 카드 UI |
-| `EmotionAllStatsSheetVC.swift` | 감정 전체 순위 Sheet |
-| `EmotionAmountCardView.swift` | 감정별 절약 금액 카드 |
-| `EmotionAmountRowView.swift` | 감정별 금액 Row |
-| `ToolTipView.swift` | Tooltip 오버레이/말풍선 UI |
+| `StaticVC.swift` | 統計画面コンテナ |
+| `StaticViewModel.swift` | 全期間/月別/感情の統計計算 |
+| `SummaryCardView.swift` | 全期間の累積サマリーカード |
+| `MonthlySummaryCardView.swift` | 月選択 + カテゴリ別統計 |
+| `CategoryBarView.swift` | カテゴリのバーチャート UI |
+| `CategoryDetailVC.swift` | カテゴリ詳細画面 |
+| `CategoryDetailViewModel.swift` | カテゴリ別合算ロジック |
+| `EmotionTopView.swift` | 感情 TOP 3 サマリー |
+| `EmotionTopCardView.swift` | 感情 TOP カード UI |
+| `EmotionAllStatsSheetVC.swift` | 感情の全ランキング Sheet |
+| `EmotionAmountCardView.swift` | 感情別節約金額カード |
+| `EmotionAmountRowView.swift` | 感情別金額 Row |
+| `ToolTipView.swift` | Tooltip オーバーレイ/吹き出し UI |
 
 ---
 
 ### 🔹 Features / Settings
 
-| 파일명 | 역할 |
+| ファイル名 | 役割 |
 | --- | --- |
-| `SettingVC.swift` | 설정 화면 컨테이너 |
-| `SettingViewModel.swift` | 프로필/로그인방식/다크모드/탈퇴 로직 |
-| `SettingRowView.swift` | 설정 한 줄(Row) 커스텀 UI |
-| `NicknameEditPopupVC.swift` | 닉네임 변경 팝업 |
+| `SettingVC.swift` | 設定画面コンテナ |
+| `SettingViewModel.swift` | プロフィール/ログイン方式/ダークモード/退会ロジック |
+| `SettingRowView.swift` | 設定の1行（Row）カスタム UI |
+| `NicknameEditPopupVC.swift` | ニックネーム変更ポップアップ |
 
 ---
 
 ### 🔹 Extensions
 
-| 파일명 | 역할 |
+| ファイル名 | 役割 |
 | --- | --- |
-| `UIColor+Color.swift` | 앱 공통 컬러 정의 |
-| `UIColor+hex.swift` | hex → UIColor 변환 |
-| `UITextField+DisableSuggestions.swift` | 키보드 추천/자동완성 비활성화 |
-| `UITextField+PlaceHolder.swift` | 포커스 기반 placeholder 제어 |
-| `UITextView+DisableSuggestions.swift` | UITextView 추천 비활성화 |
-| `UIViewController+Alert.swift` | 공통 Alert |
-| `UIViewController+BackButton.swift` | 커스텀 뒤로가기 버튼 |
-| `UIViewController+KeyBoard.swift` | 키보드 dismiss 제스처 |
-| `UIViewController+Navigation.swift` | 네비게이션바 숨김 |
+| `UIColor+Color.swift` | アプリ共通カラー定義 |
+| `UIColor+hex.swift` | hex → UIColor 変換 |
+| `UITextField+DisableSuggestions.swift` | キーボードの候補/自動補完の無効化 |
+| `UITextField+PlaceHolder.swift` | フォーカスに応じた placeholder 制御 |
+| `UITextView+DisableSuggestions.swift` | UITextView の候補無効化 |
+| `UIViewController+Alert.swift` | 共通 Alert |
+| `UIViewController+BackButton.swift` | カスタム戻るボタン |
+| `UIViewController+KeyBoard.swift` | キーボード dismiss ジェスチャー |
+| `UIViewController+Navigation.swift` | ナビゲーションバー非表示 |
 
 ---
 
-## ⚙️ 사용 기술
+## ⚙️ 使用技術
 
 - **Language**: Swift
-- **UI**: UIKit (Code Layout)
+- **UI**: UIKit（Code Layout）
 - **Architecture**: MVVM
 - **Concurrency**: async / await
 - **Backend**: Supabase
 - **Auth**: Email / Google / Apple
-- **Chart**: CoreAnimation (CAShapeLayer)
+- **Chart**: CoreAnimation（CAShapeLayer）
 
-### 🤔 기술 선택 이유
+### 🤔 技術選定理由
 
 - **UIKit**
-    - 복잡한 커스텀 UI 및 애니메이션에 유리
+    - 複雑なカスタム UI やアニメーションに強い
 - **MVVM**
-    - 통계/비즈니스 로직 분리로 유지보수성 확보
+    - 統計/ビジネスロジックを分離し、保守性を確保
 - **Output Callback**
-    - Rx/Combine 없이도 명확한 단방향 데이터 흐름
+    - Rx/Combine なしでも明確な単方向データフローを実現
 - **Supabase**
-    - Auth + DB + Edge Function을 단일 백엔드로 관리
+    - Auth + DB + Edge Function を単一バックエンドで一括管理
 
 ---
 
-## 🧠 설계 및 구현 방법
+## 🧠 設計・実装方針
 
-### 1. **📊 데이터 처리 & 통계**
+### 1. **📊 データ処理 & 統計**
 
-- 오늘 기록: `Calendar.startOfDay`
-- 월별 기록:
-    - `YearMonth` 모델로 월 개념 명확화
-    - UTC ↔ KST 변환 오류 방지를 위해
+- 今日の記録: `Calendar.startOfDay`
+- 月別記録:
+    - `YearMonth` モデルで「月」の概念を明確化
+    - UTC ↔ KST の変換ミスを防ぐために
         
-        `YearMonth` 모델 + KST 기준 월 범위 계산 도입
+        `YearMonth` モデル + KST 基準の月範囲計算を導入
         
         ```swift
         let (start, end)= ym.monthRange(
             in:TimeZone(identifier:"Asia/Seoul")!
         )
+        
         ```
         
 
-### 2. **🧩** 통계 로직 분리 및 UI 구조 설계
+### 2. **🧩** 統計ロジックの分離と UI 構造設計
 
-- 모든 합계 / 비율 계산을 ViewModel에서 처리
-- View는 결과 렌더링만 담당
-- 화면을 작은 UI 컴포넌트로 분리하여 유지보수성과 재사용성 향상
+- すべての合計/比率計算を ViewModel で処理
+- View は結果の描画のみを担当
+- 画面を小さな UI コンポーネントに分割し、保守性と再利用性を向上
 
-### 3. **🗑**  회원 탈퇴 보안 처리
+### 3. **🗑** 退会時のセキュアな削除処理
 
-- Supabase Edge Function으로
+- Supabase Edge Function を用いて
     
-    `auth.users + 관련 데이터` 서버에서 완전 삭제
+    `auth.users + 関連データ` をサーバー側で完全削除
     
     ```
     App
-     → Access Token 획득
-     → Edge Function 호출
-     → 계정 삭제
-     → 로컬 세션 정리
+     →Access Token 取得
+     → EdgeFunction 呼び出し
+     → アカウント削除
+     → ローカルセッション整理
+    
     ```
     
 
-### **4. 📈 시각화 구현**
+### 4. **📈 可視化の実装**
 
 - **Donut Chart**
-    - `CAShapeLayer`로 직접 구현
-    - Track + Segment 구조
-    - 카테고리별 색상 반영
-    - 범례 스크롤 + 고정 카드 높이 설계
+    - `CAShapeLayer` で自作実装
+    - Track + Segment 構造
+    - カテゴリ別カラーを反映
+    - 凡例スクロール + 固定カード高さ設計
 - **Category Bar Chart**
-    - AutoLayout Constraint 기반 애니메이션
-    - 비율에 따라 width 계산
-    - 최소 너비 보장으로 가독성 확보
+    - AutoLayout Constraint ベースのアニメーション
+    - 比率に応じて width を計算
+    - 最小幅を保証して可読性を確保
 
 ---
 
-## 🚀 앱 배포 및 심사 히스토리
+## 🚀 アプリ配布・審査履歴
 
-### ver 1.0.1 (2026.01.17)
+### ver 1.0.1（2026.01.17）
+
 - AppStore Release
 
-### **ver 1.0.2 (2026.01.28)**
-- Apple 계정 연동 가입 버튼 한글화 및 세부 UI 조정
+### **ver 1.0.2（2026.01.28）**
+
+- Apple アカウント連携の登録ボタンを日本語化し、細部 UI を調整
 
 ---
-## 📌 향후 개선 방향
 
-- `SupabaseManager`를 도메인별 서비스로 분리
-- Rx/Combine 기반 ViewModel 확장
-- 차트 애니메이션 고도화
-- 감정, 카테고리 가로 스크롤뷰 UI 개선
-- 커뮤니티 섹션 추가
+## 📌 今後の改善方針
 
-## 🛠️ 추후 업데이트 예정
+- `SupabaseManager` をドメイン別サービスへ分割
+- Rx/Combine ベースで ViewModel を拡張
+- チャートアニメーションの高度化
+- 感情・カテゴリの横スクロールビュー UI 改善
+- コミュニティセクション追加
 
-- 전체 기록 조회 기능 추가
-- 기록 수정(Edit) 기능 추가
-- 감정, 카테고리 커스터마이즈 기능 추가
+## 🛠️ 今後のアップデート予定
 
+- 全記録の閲覧機能を追加
+- 記録編集（Edit）機能を追加
+- 感情・カテゴリのカスタマイズ機能を追加
