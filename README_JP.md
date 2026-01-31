@@ -315,7 +315,7 @@ viewModel.onSummary = { output in
 
 ### ver 1.0.1（2026.01.17）
 
-- AppStore Release
+- アプリストア　リリース
 
 ### **ver 1.0.2（2026.01.28）**
 
